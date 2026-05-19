@@ -83,3 +83,13 @@ export type Income = {
   date: string;
   type: "fixed" | "variable";
 };
+
+export type PiggyBank = {
+  id: string;
+  name: string;
+  targetAmount: string | number;
+  currentAmount: string | number;
+  icon: string | null;
+  createdAt: string;
+  updatedAt: string;
+};
