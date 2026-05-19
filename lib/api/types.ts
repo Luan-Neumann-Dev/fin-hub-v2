@@ -127,3 +127,43 @@ export type Invoice = {
   createdAt?: string;
   updatedAt?: string;
 };
+
+export type InvestmentType = "stock" | "fixed_income" | "crypto" | "fund";
+
+export type Investment = {
+  id: string;
+  name: string;
+  type: InvestmentType;
+  investedAmount: string | number;
+  currentAmount: string | number;
+  profit: string | number;
+  profitPercent: string | number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+export type CashflowReportItem = {
+  month: number;
+  year: number;
+  label: string;
+  incomes: string | number;
+  expenses: string | number;
+  balance: string | number;
+};
+
+export type MonthlyEvolutionReportItem = CashflowReportItem & {
+  accumulatedBalance: string | number;
+  piggyBanksBalance: string | number;
+  investedAmount: string | number;
+  investmentsCurrentAmount: string | number;
+  estimatedNetWorth: string | number;
+};
+
+export type CategoryReportItem = {
+  categoryId?: string;
+  categoryName: string;
+  color: string;
+  totalAmount: string | number;
+  totalTransactions: number;
+  percentage: string | number;
+};
