@@ -93,3 +93,37 @@ export type PiggyBank = {
   createdAt: string;
   updatedAt: string;
 };
+
+export type CreditCard = {
+  id: string;
+  name: string;
+  color: string | null;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+export type InvoiceStatus = "open" | "closed" | "overdue";
+
+export type InvoicePurchase = {
+  id: string;
+  invoiceId?: string;
+  description: string;
+  amount: string | number;
+  date: string;
+  category: string | null;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+export type Invoice = {
+  id: string;
+  creditCardId: string;
+  dueDate: string;
+  closingDate: string | null;
+  status: InvoiceStatus;
+  totalAmount: string | number;
+  creditCard?: CreditCard | null;
+  purchases?: InvoicePurchase[];
+  createdAt?: string;
+  updatedAt?: string;
+};
